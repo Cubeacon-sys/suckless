@@ -136,8 +136,8 @@ static const Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_f,      spawn,          SHCMD("firefox-bin &") },
 	{ Mod4Mask|ShiftMask,             XK_s,      spawn,          SHCMD("maim ~/Pictures/screenshot_$(date +%Y-%m-%d_%H-%M-%S).png") },
 	{ MODKEY|ShiftMask,             XK_s,      spawn,          SHCMD("maim -s ~/Pictures/screenshot_$(date +%Y-%m-%d_%H-%M-%S).png") },
-	{ MODKEY|ShiftMask,             XK_w,      spawn,          SHCMD("/home/gubeacon/suckless/scripts/wallpick.sh") },
-	{ Mod4Mask,                     XK_r,    spawn,          SHCMD("/home/gubeacon/suckless/scripts/funny.sh") },
+	{ MODKEY|ShiftMask,             XK_w,      spawn,          SHCMD("~/suckless/scripts/wallpick.sh") },
+	{ Mod4Mask,                     XK_r,    spawn,          SHCMD("~/suckless/scripts/funny.sh") },
 	TAGKEYS(                        XK_1,                      0)
 	TAGKEYS(                        XK_2,                      1)
 	TAGKEYS(                        XK_3,                      2)
