@@ -1,5 +1,5 @@
 # My suckless build
-> it's pretty simple tbh
+> it's pretty simple tbh also added xrdb support for colors
 
 # Programs
 1. dwm
@@ -10,5 +10,5 @@
 
 # Patches
 1. dwm: vanitygaps, xrdb
-2. st: alpha, anysize, xrdb
+2. st: alpha, anysize, xrdb, boxdraw
 
