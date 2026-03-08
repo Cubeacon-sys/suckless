@@ -9,6 +9,6 @@
 5. my random scripts
 
 # Patches
-1. dwm: vanitygaps
-2. st: alpha, anysize
+1. dwm: vanitygaps, xrdb
+2. st: alpha, anysize, xrdb
 

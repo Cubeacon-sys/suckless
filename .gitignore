@@ -5,3 +5,5 @@ st
 .git
 *.o
 *.orig
+*.diff
+*.bak
