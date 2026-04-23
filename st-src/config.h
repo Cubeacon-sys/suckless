@@ -8,7 +8,14 @@
 
 static const int resizehints = 0;
 // static char *font = "JetBrains Mono Nerd Font:pixelsize=14:antialias=true:autohint=false";
-static char *font = "IosevkaTerm:pixelsize=15:antialias=true:autohint=false";
+// static char *font = "IosevkaTerm:pixelsize=15:antialias=true:autohint=false";
+// static char *font = "Cousine-Regular:pixelsize=14:antialias=true:autohint=false";
+// static char *font = "Lucida Sans Typewriter:pixelsize=14:antialias=true:autohint=false";
+// static char *font = "The Sans Mono\\-:pixelsize=14:antialias=true:autohint=false";
+// static char *font = "Anonymous Pro:pixelsize=15:antialias=true:autohint=false";
+static char *font = "KurisuFont:pixelsize=15:antialias=true:autohint=true";
+// static char *font = "Glass TTY VT220:pixelsize=17:antialias=true:autohint=true";
+// static char *font = "Terminus (TTF):pixelsize=16:antialias=true:autohint=false";
 static float lineheight = 0;
 static int borderpx = 0;
 
@@ -125,7 +132,7 @@ static const char *colorname[] = {
 
     "#CCD0DA", /* 256: default FG */
     "#24273A", /* 257: default BG */
-    "#F5BDE6", /* 258: cursor -> pastel pink */
+    "#FFFFFF", /* 258: cursor -> pastel pink */
     "#6E6C7E", /* 259: selection */
 };
 

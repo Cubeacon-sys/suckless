@@ -74,12 +74,34 @@ static const char unknown_str[] = "n/a";
 
 // Helper functions for battery
 	
+
+// static const struct arg args[] = {
+// 	/* function format          argument */
+// 	{ run_command, "[SND <)%4s]   ", "amixer sget Master | awk -F\"[][]\" '/%/ { print $2 }' | head -n1" },
+// 	{ battery_perc, "[BAT == %s%%]   ", "BAT0" }, 
+// 	{ cpu_perc, "[CPU # %s%%]   ", NULL},
+// 	{ ram_perc, "[RAM || %s%%]   ", NULL},
+// 	{ wifi_perc, "[WIFI >) %s%% ]   ", "wlp2s0" },
+// 	{ datetime, "[%s]",           "%a %b %d %r" },
+// };
+//
 static const struct arg args[] = {
 	/* function format          argument */
-	{ run_command, "[SND <)%4s]   ", "amixer sget Master | awk -F\"[][]\" '/%/ { print $2 }' | head -n1" },
-	{ battery_perc, "[BAT == %s%%]   ", "BAT0" }, 
-	{ cpu_perc, "[CPU # %s%%]   ", NULL},
-	{ ram_perc, "[RAM || %s%%]   ", NULL},
-	{ wifi_perc, "[WIFI >) %s%% ]   ", "wlp2s0" },
-	{ datetime, "[%s]",           "%a %b %d %r" },
+	/* 1. Divergence Meter (Volume) - Ref: Worldline Divergence */
+	{ run_command, "| 1.0485%s | ", "amixer sget Master | awk -F'[][]' '/%/ {gsub(/ /,\"\",$2); print $2}' | head -n1" },
+
+	/* 2. Lab Member Battery (BAT) - Ref: Kurisu (M) / Lab Member Power */
+	{ battery_perc, "MEMBER-004: %s%% | ", "BAT0" }, 
+
+	/* 3. Logic Processing (CPU) - Ref: Reading Steiner / Logic Gate */
+	{ cpu_perc, "STEINER: # %s%% | ", NULL},
+
+	/* 4. Memory Allocation (RAM) - Ref: Neural Mapping / Kurisu Brain */
+	{ ram_perc, "MEM-MAP: || %s%% | ", NULL},
+
+	/* 5. Node Connection (WIFI) - Ref: PhoneWave (name-subject to change) */
+	{ wifi_perc, "NODE-WLP: >) %s%% | ", "wlp2s0" },
+
+	/* 6. Worldline Time (Clock) - Ref: Steins;Gate 0 Time */
+	{ datetime, "WL-CLK: %s",           "%a %b %d %r" },
 };

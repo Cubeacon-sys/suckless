@@ -18,10 +18,11 @@ static const unsigned int gappov    = 30;       /* vert outer gap between window
 static       int smartgaps          = 0;        /* 1 means no outer gap when there is only one window */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
-//static const char *fonts[]          = { "JetBrains Mono Nerd Font:size=10" };
-static const char *fonts[]          = { "IosevkaTerm:size=11" };
-static const char dmenufont[]       = "IosevkaTerm:size=11";
-/* Catppuccin Macchiato colorscheme */
+// static const char *fonts[]          = { "IosevkaTerm:size=11" };
+// static const char dmenufont[]       = "IosevkaTerm:size=11";
+static const char *fonts[]          = { "KurisuFont:size=11" };
+static const char dmenufont[]       = "KurisuFont:size=11";
+// default colorscheme
 static char normbgcolor[]           = "#222222";
 static char normbordercolor[]       = "#444444";
 static char normfgcolor[]           = "#bbbbbb";
@@ -35,7 +36,7 @@ static char *colors[][3] = {
 };
 
 /* tagging */
-static const char *tags[] = { "[~]", "[+]", "[-]", "[*]", "[=]", "[#]", "[%]", "[^]", "[&]" };
+static const char *tags[] = { "O", "S", "H", "M", "K", "U", "F", "A", "Ω" };
 
 static const Rule rules[] = {
 	/* xprop(1):
@@ -45,6 +46,7 @@ static const Rule rules[] = {
 	/* class      instance    title       tags mask     isfloating   monitor */
 	{ "Gimp",     NULL,       NULL,       0,            1,           -1 },
 	{ "Firefox",  NULL,       NULL,       1 << 8,       0,           -1 },
+	{ "Wine",     NULL,	  NULL,	      0,            1            -1 },
 };
 
 /* layout(s) */
@@ -134,10 +136,10 @@ static const Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_comma,  tagmon,         {.i = -1 } },
 	{ MODKEY|ShiftMask,             XK_period, tagmon,         {.i = +1 } },	
 	{ MODKEY|ShiftMask,             XK_f,      spawn,          SHCMD("firefox-bin &") },
-	{ Mod4Mask|ShiftMask,             XK_s,      spawn,          SHCMD("maim ~/Pictures/screenshot_$(date +%Y-%m-%d_%H-%M-%S).png") },
+	{ Mod4Mask|ShiftMask,           XK_s,      spawn,          SHCMD("maim ~/Pictures/screenshot_$(date +%Y-%m-%d_%H-%M-%S).png") },
 	{ MODKEY|ShiftMask,             XK_s,      spawn,          SHCMD("maim -s ~/Pictures/screenshot_$(date +%Y-%m-%d_%H-%M-%S).png") },
-	{ MODKEY|ShiftMask,             XK_w,      spawnandreload,          SHCMD("~/suckless/scripts/wallpick.sh") },
-	{ Mod4Mask,                     XK_r,    spawn,          SHCMD("~/suckless/scripts/funny.sh") },
+	{ MODKEY|ShiftMask,             XK_w,      spawnandreload, SHCMD("~/suckless/scripts/wallpick.sh") },
+	{ Mod4Mask,                     XK_r,      spawn,          SHCMD("~/suckless/scripts/funny.sh") },
 	TAGKEYS(                        XK_1,                      0)
 	TAGKEYS(                        XK_2,                      1)
 	TAGKEYS(                        XK_3,                      2)

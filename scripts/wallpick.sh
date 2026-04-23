@@ -1,7 +1,7 @@
 #!/bin/sh
 
 WALLDIR="$HOME/Pictures/wallpaper"
-FONT="Iosevka Term:size=11"
+FONT="KurisuFont:size=11"
 
 OPACITY=85
 
